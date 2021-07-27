@@ -1,8 +1,8 @@
-package dataStructureAndAlgorithm;
+package dataStructureAndAlgorithm.a_array;
 
 
 /**
- * 二维数组
+ * 二维数组与稀疏数组
  */
 public class XsArray {
     public static void main(String[] args) {
