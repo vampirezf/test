@@ -1,7 +1,10 @@
-package dataStructure;
+package dataStructureAndAlgorithm;
 
 
-public class xsArray {
+/**
+ * 二维数组
+ */
+public class XsArray {
     public static void main(String[] args) {
         System.out.println("原始数组：");
         int[][] ysArray = new int[10][10];// 创建了 一个二维数组————相当于一个10*10的棋盘
