@@ -27,6 +27,10 @@ import java.util.stream.Collectors;
 
 public class TestMain {
 
+    private String REX1= "(?<=\\$\\{)(\\w+)(?=\\})";
+
+    private String REX2= "(?=(\\$\\{\\w+}))..(\\w+)(\\})";
+
     @Test
     public void test() {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -1567,11 +1571,11 @@ public class TestMain {
 
     @Test
     public void test77(){
-        Person person = new Person.PersonBuilder()
+        /*Person person = new Person.PersonBuilder()
                 .id(1L)
                 .name("小白").build();
         String string = person.toString();
-        System.out.println(string);
+        System.out.println(string);*/
     }
 
     @Test
@@ -1673,6 +1677,35 @@ public class TestMain {
     public void test85(){
         List<String> list = new ArrayList<>();
         System.out.println(list.size());
+    }
+
+    @Test
+    public void test86(){
+        Pattern p = Pattern.compile(REX1);
+        Matcher matcher = p.matcher("aaa${zzz}dds{1}");
+        if(matcher.find()){
+            String group = matcher.group(0);
+            System.out.println(group);
+        }
+    }
+
+    @Test
+    public void test87(){
+        DateFormat dateFormat2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String a = "1558519480";
+        Date date = new Date(Long.parseLong(a) * 1000);
+        String format = dateFormat2.format(date);
+        System.out.println(format);
+    }
+
+    @Test
+    public void test88(){
+        String a = "C:/work_space/test/2021年上半年数据.xls";
+        String b = "C:/work_space/test/ces.xlsx";
+        String c = "C:/work_space/test/测试.doc";
+        String d = "C:/work_space/test/测试.docx";
+        boolean xls = b.endsWith("xls");
+        System.out.println(xls);
     }
 
 
