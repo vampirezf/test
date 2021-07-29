@@ -87,6 +87,26 @@ public class SingleLinkedList {
         q.next = q.next.next;
     }
 
+    public void deleteByValue(int value){
+        if(head == null){
+            return;
+        }
+        Node p = head;
+        Node q = null;
+        while (p != null && p.data != value){
+            q = p;
+            p = p.next;
+        }
+        if(p == null){
+            return;
+        }
+        if(q == null){
+            head = head.next;
+        }else {
+            q.next = head.next.next;
+        }
+    }
+
     public void printAll() {
         Node p = head;
         while (p != null) {
